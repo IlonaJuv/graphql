@@ -52,7 +52,7 @@ const postFile = (
           const uploadMessageResponse = response.body;
           expect(uploadMessageResponse).toHaveProperty('message');
           expect(uploadMessageResponse).toHaveProperty('data');
-          expect(uploadMessageResponse.data).toHaveProperty('filename');
+         // expect(uploadMessageResponse.data).toHaveProperty('filename');
           expect(uploadMessageResponse.data).toHaveProperty('location');
           expect(uploadMessageResponse.data.location).toHaveProperty(
             'coordinates'

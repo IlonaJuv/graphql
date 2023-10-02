@@ -119,7 +119,7 @@ describe('Testing graphql api', () => {
   it('should update user', async () => {
     await putUser(app, userData.token!);
   });
-
+/*
   // test cat upload
   let uploadData1: UploadMessageResponse;
   let catData1: CatTest;
@@ -137,7 +137,20 @@ describe('Testing graphql api', () => {
       },
       filename: 'fkokok',
     };
+  });*/
+  let uploadData1: UploadMessageResponse;
+  let catData1: CatTest;
+  it('should upload a cat', async () => {
+    uploadData1 = await postFile(uploadApp, userData.token!);
+    catData1 = {
+      catName: 'Test Cat' + randomstring.generate(7),
+      weight: 5,
+      birthdate: new Date('2022-01-01'),
+      filename: "picWithGPS.JPG",
+      location: uploadData1.data.location,
+    };
   });
+
 
   // test post cat data
   let catID1: string;
